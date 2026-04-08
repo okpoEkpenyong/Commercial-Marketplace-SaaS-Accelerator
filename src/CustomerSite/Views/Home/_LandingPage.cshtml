@@ -188,11 +188,30 @@
                     </dl>
                 </div>
                 <div class="text-end">
-                    @if (Model.SubscriptionStatus == SubscriptionStatusEnumExtension.Subscribed)
+                    @* @if (Model.SubscriptionStatus == SubscriptionStatusEnumExtension.Subscribed)
                     {
                         <button type="submit" asp-action="SubscriptionOperation" asp-route-subscriptionId="@Model.Id" asp-route-planId="@Model.PlanId" asp-route-operation="Deactivate" class="cm-button-danger text-right">Unsubscribe</button>
                         <button type="submit" asp-action="Subscriptions" class="cm-button-default text-end">Go to Subscription List</button>
+                    } *@
+
+                    @if (Model.SubscriptionStatus == SubscriptionStatusEnumExtension.Subscribed)
+                    {
+                        <!-- EXZING CUSTOM LAUNCH BUTTON -->
+                        <div class="mb-4 p-3" style="background-color: #eef6fb; border-radius: 8px; border: 1px solid #0078d4; text-align:center;">
+                            <h5 style="color: #0078d4;"> Engineering Workspace Ready</h5>
+                            <p>Access your reservoir models and AI advisor via the link below.</p>
+                            <a href="https://exzing-reservoir-agent.azurewebsites.net/"
+                                   target="_blank"
+                                   class="btn btn-primary btn-lg shadow"
+                                   style="background-color: #0078d4; font-weight: bold; padding: 10px 40px; border: none;">
+                                Open Reservoir Management Agent
+                            </a>
+                        </div>
+
+                        <button type="submit" asp-action="SubscriptionOperation" asp-route-subscriptionId="@Model.Id" asp-route-planId="@Model.PlanId" asp-route-operation="Deactivate" class="cm-button-danger text-right">Unsubscribe</button>
+                        <button type="submit" asp-action="Subscriptions" class="cm-button-default text-end">Go to Subscription List</button>
                     }
+
                     @if (Model.SubscriptionStatus == SubscriptionStatusEnumExtension.PendingFulfillmentStart && Model.IsAutomaticProvisioningSupported == true)
                     {
                         <a onclick="SubscriptionOperation('@Model.Id','@Model.PlanId','Activate')" id="btnActive" class="cm-button-default text-end">Activate</a>
@@ -210,7 +229,7 @@ else
 {
     <div class="pt-5">
         <div class="card p-3 ">
-            <div class="text-center">
+            @* <div class="text-center">
                 <h1 class="display-4">Welcome</h1>
             </div>
             <div class="text-left">
@@ -218,14 +237,31 @@ else
                     Get started with integrating your <b> Software as a Service (SaaS) </b> solution with the <b> SaaS fulfillment APIs version 2 in Microsoft commercial marketplace. </b>
                 </p>
                 <p><a href="https://docs.microsoft.com/en-us/azure/marketplace/partner-center-portal/pc-saas-fulfillment-api-v2" target="_blank">Click here </a><span>for the API documentation.</span> </p>
-            </div>
-            <div>
+            </div> *@
+            @* <div>
                 <b>To purchase this SaaS offer:</b>
                 <ul>
                     <li>Search for resources of type <b> Software as a Service (SaaS) </b></li>
                     <li>Search for your offer</li>
                     <li>Click <b> Create</b> to subscribe to the offer</li>
                     <li>Click <b>Configure Account </b> after the subscription created</li>
+                </ul>
+            </div> *@
+            <div class="text-center">
+                <h1 class="display-4" style="color:#0078d4;">Exzing Technology</h1>
+                <p class="lead">AI-Powered Reservoir Management & Field Optimization</p>
+            </div>
+            <div class="text-left py-3">
+                <p>
+                    Welcome to the Exzing engineering portal. This platform allows you to manage your subsurface data analysis subscriptions and access our specialized AI Reservoir Agent.
+                </p>
+            </div>
+            <div class="bg-light p-3 rounded">
+                <b>To begin optimizing your assets:</b>
+                <ul class="mt-2">
+                    <li>Select a <b>Standard Plan</b> from the Azure Marketplace.</li>
+                    <li>Click <b>Configure Account</b> to activate your engineering workspace.</li>
+                    <li>Once active, your <b>Reservoir Agent</b> will be available for immediate use.</li>
                 </ul>
             </div>
         </div>

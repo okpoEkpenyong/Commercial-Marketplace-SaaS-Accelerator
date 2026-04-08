@@ -18,8 +18,9 @@
 <body>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark cm-top-nav-bar">
         <a class="navbar-brand mr-auto mr-lg-0" href="@Url.Action("Index", "Home")">
-            <img class="cm-logo" style="padding-left:15px;" src="~/contoso-sales.png" />
-            @*<img class="cm-logo pull-left" src="https://kblnuser.azurewebsites.net/logo.png" />*@
+            @* <img class="cm-logo" style="padding-left:15px;" src="~/contoso-sales.png" /> *@
+            <span style="color:white; font-size:1.5rem; font-weight:bold; padding-left:15px;">Exzing Reservoir Management Agent</span>
+             @*<img class="cm-logo pull-left" src="https://kblnuser.azurewebsites.net/logo.png" /> *@
         </a>
         @*<a class="navbar-brand mr-auto mr-lg-0" asp-area="" asp-controller="Home" asp-action="Index">SaasKit Demo</a>*@
 
@@ -36,7 +37,12 @@
                 }
                 else
                 {
-                    <a class="text-white" style="text-decoration: none;" asp-controller="Account" asp-action="SignIn">Sign in</a>
+                    @* <a class="text-white" style="text-decoration: none;" asp-controller="Account" asp-action="SignIn">Sign in</a> *@
+                    <a class="text-white" style="text-decoration: none;"
+                       asp-controller="Account" asp-action="SignIn"
+                       asp-route-returnUrl="@Url.Action("Index", "Home")">
+                        Sign in
+                    </a>
                 }
             </div>
         </div>
@@ -64,7 +70,8 @@
 
     <footer class="cm-footer">
         <div class="container text-center">
-            &copy; 2020 - SaasKit - Demo - Version: @ViewData["AppVersion"]
+            @* &copy; 2020 - SaasKit - Demo - Version: @ViewData["AppVersion"] *@
+            &copy; @DateTime.Now.Year - Exzing Technology Ltd - Version: @ViewData["AppVersion"]
         </div>
     </footer>
 

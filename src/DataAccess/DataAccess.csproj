@@ -1,27 +1,26 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<Authors>Microsoft.Marketplace</Authors>
-		<Company>Microsoft</Company>
-		<Product>Marketplace.SaaS.Accelerator</Product>
-		<AssemblyName>DataAccess</AssemblyName>
-		<RootNamespace>Marketplace.SaaS.Accelerator.DataAccess</RootNamespace>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<Folder Include="Context\" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="Azure.Identity" Version="1.11.4" />
-		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.1" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-	</ItemGroup>
-
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="Current">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Authors>Microsoft.Marketplace</Authors>
+    <Company>Microsoft</Company>
+    <Product>Marketplace.SaaS.Accelerator</Product>
+    <AssemblyName>DataAccess</AssemblyName>
+    <RootNamespace>Marketplace.SaaS.Accelerator.DataAccess</RootNamespace>
+    <FileUpgradeFlags>40</FileUpgradeFlags>
+    <UpgradeBackupLocation>C:\Users\Administrator.DESKTOP-P34765Q\Desktop\exzing\31stMarch\Commercial-Marketplace-SaaS-Accelerator\src\Backup\DataAccess\</UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Context\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.11.4" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 </Project>
